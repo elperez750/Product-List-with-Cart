@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import DessertCard from "./components/DessertCard";
+import data from "./data/data.json";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-rose-50 p-10">
+      <h1 className="text-7xl ml-40 font-bold">Desserts</h1>
+      <div className="grid grid-cols-3 bg-transparent w-3/4 p-20">
+      {data.map((dessert) => {
+        return (
+          <DessertCard
+            key={dessert.name}
+            image={dessert.image.desktop}
+            category={dessert.category}
+            name={dessert.name}
+            price={dessert.price}
+          />
+        );
+      })}
+      </div>
     </div>
   );
 }
