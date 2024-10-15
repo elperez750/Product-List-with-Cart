@@ -5,3 +5,11 @@ export type DessertCardType = {
     price: number
 
 }
+
+export type CartItemType = {
+
+    mealName: string,
+    quantity: number,
+    price: number
+
+}
